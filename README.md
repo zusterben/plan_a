@@ -1,6 +1,9 @@
 # [科学上网]
 
 > 此项目提供用于paldier带软件中心固件路由器的科学上网。
+> 安装包放在bin目录对应架构下，可以看下面的列表查找对应架构
+> history_package目录为备份
+
 
 ---
 
@@ -11,7 +14,7 @@ sed -i 's/\tdetect_package/\t# detect_package/g' /jffs/softcenter/scripts/ks_tar
 
 ---
 
-## 机型/固件支持（文字版）
+## 机型/固件支持
 
 ### [mips](https://github.com/zusterben/plan_a/tree/master/bin/mips)
 
