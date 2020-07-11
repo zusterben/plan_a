@@ -10,21 +10,21 @@ if [ "$ARCH" == "armv7l" ]; then
 	fi
 else
 	if [ "$KVER" == "3.10.14" ];then
-		dbus set softcenter_arch="mipsle"
+		ARCH="mipsle"
 	fi
 fi
 if [ "$ARCH" == "armv7l" ]; then
-	scarch="softcenterarm"
+	scarch="arm"
 elif [ "$ARCH" == "armng" ]; then
-	scarch="softcenterarmng"
+	scarch="armng"
 elif [ "$ARCH" == "aarch64" ]; then
-	scarch="softcenterarm64"
+	scarch="arm64"
 elif [ "$ARCH" == "mipsle" ]; then
-	scarch="softcentermipsle"
+	scarch="mipsle"
 elif [ "$ARCH" == "mips" ]; then
-	scarch="softcenter"
+	scarch="mips"
 fi
-main_url="https://raw.githubusercontent.com/paldier/$scarch/master/shadowsocks"
+main_url="https://raw.githubusercontent.com/zusterben/plan_a/master/bin/$scarch/"
 backup_url=""
 
 install_ss(){
@@ -79,7 +79,7 @@ update_ss(){
 
 update_ss2(){
 	echo_date "目前还没有任何备用服务器！请尝试使用离线安装功能！"
-	echo_date "历史版本下载地址：https://github.com/paldier/$scarch/tree/master/shadowsocks/history"
+	echo_date "历史版本下载地址：https://raw.githubusercontent.com/zusterben/plan_a/master/history_package/$scarch/"
 	echo_date "下载后请将下载包名字改为：shadowsocks.tar.gz，再使用离线安装进行安装"
 	sleep 1
 	exit

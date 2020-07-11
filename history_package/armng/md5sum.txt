@@ -1,1 +1,2 @@
 947d4da0c21f19344c957784a64b2567 shadowsocks_4.2.8.tar.gz
+fb81e92daac6e413369c55472802974e shadowsocks_4.2.9.tar.gz

@@ -641,9 +641,7 @@ function count_down_close() {
 										<div class="apply_gen">
 											<input id="cmdBtn" class="button_gen" type="button" onclick="save()" value="提交">
 										</div>
-										<div style="margin-left:5px;margin-top:10px;margin-bottom:10px">
-											<img src="/images/New_ui/export/line_export.png">
-										</div>
+										<div style="margin:10px 0 10px 5px;" class="splitLine"></div>
 									</td>
 								</tr>
 							</table>

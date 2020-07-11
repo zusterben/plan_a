@@ -131,6 +131,7 @@ prepare(){
 	# 3 应用之前提取的干净的ss配置
 	echo_date 检查完毕！节点信息备份在/jffs/softcenter/configs/ss_conf.sh
 	cat /tmp/ss_conf.sh | sed 's/=/=\"/' | sed 's/$/\"/g' > /jffs/softcenter/configs/ss_conf.sh
+	chmod +x /jffs/softcenter/configs/ss_conf.sh
 	sh /jffs/softcenter/configs/ss_conf.sh
 	# ==============================
 }

@@ -175,11 +175,11 @@ function count_down_close() {
 								<tr>
 									<td bgcolor="#4D595D" colspan="3" valign="top"><div>&nbsp;</div>
 										<div class="formfonttitle">Shadowsocks - Socks5代理设置</div>
-										<div style="margin-left:5px;margin-top:10px;margin-bottom:10px"><img src="/images/New_ui/export/line_export.png"></div>
+										<div style="margin:10px 0 10px 5px;" class="splitLine"></div>
 										<div class="SimpleNote">
 											<li><i>说明：</i>此页面允许配置第二个shadosocks账号，功能仅限于在路由器上打开一个连接到shadowsocks服务器的socks5端口。如果你使用chrome浏览器，你可以使用SwitchyOmega插件去连接这个socks5代理。</li>
 										</div>
-										<div style="margin-left:5px;margin-top:10px;margin-bottom:10px"><img src="/images/New_ui/export/line_export.png"></div>
+										<div style="margin:10px 0 10px 5px;" class="splitLine"></div>
 										<table width="100%" border="1" align="center" cellpadding="4" cellspacing="0" bordercolor="#6b8fa3" class="FormTable">
 											<thead>
 												<tr>
@@ -290,7 +290,7 @@ function count_down_close() {
 										<div class="apply_gen">
 											<input class="button_gen" id="cmdBtn" onClick="save()" type="button" value="提交" />
 										</div>
-										<div style="margin-left:5px;margin-top:10px;margin-bottom:10px"><img src="/images/New_ui/export/line_export.png"></div>
+										<div style="margin:10px 0 10px 5px;" class="splitLine"></div>
 									</td>
 								</tr>
 							</table>
