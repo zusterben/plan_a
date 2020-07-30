@@ -1621,7 +1621,7 @@ kill_cron_job(){
 }
 #--------------------------------------nat part begin------------------------------------------------
 load_tproxy(){
-	MODULES="xt_TPROXY xt_socket xt_comment"
+	MODULES="xt_TPROXY xt_comment"
 	OS=$(uname -r)
 	# load Kernel Modules
 	echo_date 加载TPROXY模块，用于udp转发...
