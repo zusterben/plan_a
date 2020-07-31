@@ -54,7 +54,7 @@ get_latest_version(){
 		COMP=`versioncmp $CUR_VER $V2VERSION`
 		if [ "$COMP" == "1" ];then
 			[ "$CUR_VER" != "0" ] && echo_date "V2Ray已安装版本号低于最新版本，开始更新程序..."
-			update_now $ARCH_SUFFIX
+			update_now $ARCH_SUFFIX $V2VERSION
 		else
 			V2RAY_LOCAL_VER=`/jffs/softcenter/bin/v2ray -version 2>/dev/null | head -n 1 | cut -d " " -f2`
 			V2RAY_LOCAL_DATE=`/jffs/softcenter/bin/v2ray -version 2>/dev/null | head -n 1 | cut -d " " -f4`
@@ -126,7 +126,7 @@ update_now(){
 	mkdir -p /tmp/v2ray && cd /tmp/v2ray
 
 	echo_date "开始下载校验文件：md5sum.txt"
-	wget --no-check-certificate --timeout=20 -qO - $url_main/$1/md5sum.txt > /tmp/v2ray/md5sum.txt
+	wget --no-check-certificate --timeout=20 -qO - $url_main/$1/$2/md5sum.txt > /tmp/v2ray/md5sum.txt
 	if [ "$?" != "0" ];then
 		echo_date "md5sum.txt下载失败！"
 		md5sum_ok=0
@@ -136,7 +136,7 @@ update_now(){
 	fi
 	
 	echo_date "开始下载v2ray程序"
-	wget --no-check-certificate --timeout=20 --tries=1 $url_main/$1/v2ray
+	wget --no-check-certificate --timeout=20 --tries=1 $url_main/$1/$2/v2ray
 	#curl -L -H "Cache-Control: no-cache" -o /tmp/v2ray/v2ray $url_main/$1/v2ray
 	if [ "$?" != "0" ];then
 		echo_date "v2ray下载失败！"
@@ -147,7 +147,7 @@ update_now(){
 	fi
 
 	echo_date "开始下载v2ctl程序"
-	wget --no-check-certificate --timeout=20 --tries=1 $url_main/$1/v2ctl
+	wget --no-check-certificate --timeout=20 --tries=1 $url_main/$1/$2/v2ctl
 	if [ "$?" != "0" ];then
 		echo_date "v2ctl下载失败！"
 		v2ctl_ok=0
