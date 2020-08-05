@@ -9,7 +9,7 @@ MODEL=`nvram get productid`
 echo_date 检测jffs分区剩余空间...
 if [ "$(nvram get sc_mount)" == 0 ];then
 	SPACE_AVAL=$(df|grep jffs | awk '{print $4}')
-	SPACE_NEED=$(du -s /tmp/shadowsocks | awk '{print $1}')
+	SPACE_NEED=$(du -s /tmp/shadowsocks.tar.gz | awk '{print $1}')
 	if [ "$SPACE_AVAL" -gt "$SPACE_NEED" ];then
 		echo_date 当前jffs分区剩余"$SPACE_AVAL" KB, 插件安装需要"$SPACE_NEED" KB，空间满足，继续安装！
 	elif [ -n "$ss_basic_enable" ];then

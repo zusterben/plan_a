@@ -37,6 +37,9 @@ do_build() {
 	rm -rf $MODULE/bin/*
 	cp -rf ./bin_arch/$1/* $MODULE/bin/
 	tar -zcvf ${MODULE}.tar.gz $MODULE
+	cat > $MODULE/version <<-EOF
+	$VERSION
+	EOF
 	md5value=`md5sum ${MODULE}.tar.gz|tr " " "\n"|sed -n 1p`
 	cat > ./version <<-EOF
 	$VERSION
