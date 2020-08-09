@@ -1,10 +1,10 @@
 {
-"build_date":"2020-08-01_07:47:31",
+"build_date":"2020-08-09_12:28:50",
 "description":"科学上网",
 "home_url":"Module_shadowsocks.asp",
-"md5":"c060cce82b34fecdbd2f3f0168bc1042",
+"md5":"5398aa5eb3978b15da6fddb49180d68f",
 "name":"shadowsocks",
 "tar_url": "https://raw.githubusercontent.com/zusterben/plan_a/master/bin/armng/shadowsocks.tar.gz", 
 "title":"科学上网",
-"version":"4.3.1"
+"version":"4.3.2"
 }

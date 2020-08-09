@@ -1625,7 +1625,7 @@ kill_cron_job(){
 }
 #--------------------------------------nat part begin------------------------------------------------
 load_tproxy(){
-	MODULES="xt_TPROXY xt_comment"
+	MODULES="xt_comment"
 	OS=$(uname -r)
 	# load Kernel Modules
 	echo_date 加载TPROXY模块，用于udp转发...
@@ -1633,22 +1633,12 @@ load_tproxy(){
 		if lsmod | grep $MODULE &> /dev/null; then return 0; else return 1; fi;
 	}
 	
-	for MODULE in $MODULES; do
-		if ! checkmoduleisloaded; then
-			insmod /lib/modules/${OS}/kernel/net/netfilter/${MODULE}.ko
-		fi
-	done
+	if ! checkmoduleisloaded; then
+		insmod ${MODULE}
+	fi
 	
-	modules_loaded=0
-	
-	for MODULE in $MODULES; do
-		if checkmoduleisloaded; then
-			modules_loaded=$(( j++ )); 
-		fi
-	done
-	
-	if [ $modules_loaded -ne 2 ]; then
-		echo "One or more modules are missing, only $(( modules_loaded+1 )) are loaded. Can't start.";
+	if checkmoduleisloaded; then
+		echo "One or more modules are missing. Can't start.";
 		close_in_five
 	fi
 }
