@@ -111,7 +111,7 @@ check_ip(){
 }
 # -------------------
 
-case "$1" in
+case "$ACTION" in
 	check_ip)
 		# 开始检查IP
 		check_ip
